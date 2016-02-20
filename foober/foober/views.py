@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 from django.db.models import F
 
-from forms import *
+from foober.forms import *
 
 # if not request.user.is_authenticated():
 #     return HttpResponseRedirect('/register/')
