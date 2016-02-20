@@ -1,5 +1,0 @@
-{% if request.accepted %}
-{{ request.requester.first_name }} will be joining you with a party of {{ request.party_size }}.
-{% else %}
-{{ request.requester.first_name }} wants to join you with a party of {{ request.party_size }}. <a href="/accept/{{ request.id }}">Welcome</a> this attendee?
-{% endif %}
