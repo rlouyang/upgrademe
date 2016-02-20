@@ -899,7 +899,7 @@ ul#nav li a:active {
 	background-color: transparent !important;
 }
 ul#nav li.current a {
-	background: #f26522;
+	background: #8080ff;
 	color: white;
 }
 
@@ -1101,7 +1101,7 @@ footer #go-top {
 footer #go-top a {
 	display: block;
 	padding: 12px 30px;
-	background: #d44d0d;
+	background: #8080ff;
 	color: white;
 	text-align: center;
 	font: 12px/24px "raleway-heavy", sans-serif;
@@ -1181,7 +1181,7 @@ hr {
 	text-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);	
 }
 #page-title h1 span {
-	color: #f26522;
+	color: #8080ff;
 }
 #page-title p {
 	color: #cfd9db;
@@ -1251,9 +1251,9 @@ hr {
 	text-align: center;
 	display: inline-block;
 	background: transparent;
-	color: #f26522;
+	color: #8080ff;
 	border-radius: 3px;
-	border: 3px solid #f26522;
+	border: 3px solid #8080ff;
 	font-family: 'FontAwesome';
 	font-size: 16px;
 	padding: 21px 15px;
@@ -1272,7 +1272,7 @@ hr {
 }
 .pagenav a[rel="next"]:hover:after, .pagenav a[rel="prev"]:hover:before {
 	color: white;
-	background: #f26522;
+	background: #8080ff;
 }
 .entries .pagenav {
 	margin-top: -18px;
@@ -1282,7 +1282,7 @@ hr {
 /* k. Hero Section
 /* =================================================================== */
 #hero {
-	background: #70dbdb;
+	background: #ccccff;
 	/*slides for hero*/
 	-webkit-background-size: cover !important;
 	-moz-background-size: cover !important;
@@ -1398,7 +1398,7 @@ hr {
 	width: auto;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
-	border-color: #d44d0d;
+	border-color: #8080ff;
 	color: white;
 	white-space: nowrap;
 	text-shadow: 0 0px 5px black;
@@ -1409,7 +1409,7 @@ hr {
 #hero-slider .flex-caption .button.stroke:hover {
 	color: white;
 	text-shadow: none;
-	background: #d44d0d !important;
+	background: #8080ff !important;
 }
 
 /* Slider Control Nav */
@@ -1443,10 +1443,10 @@ hr {
 	box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.5);
 }
 .hero-content .flex-control-paging li a:hover {
-	border-color: #f26522;
+	border-color: #8080ff;
 }
 .hero-content .flex-control-paging li a.flex-active {
-	border-color: #f26522;
+	border-color: #8080ff;
 	cursor: default;
 }
 
@@ -1751,7 +1751,7 @@ hr {
 	display: none;
 }
 #search label span {
-	color: #f26522;
+	color: #8080ff;
 	display: inline-block;
 }
 #search input, 
@@ -1780,12 +1780,12 @@ hr {
 	margin-bottom: 0;
 	line-height: 18px;
 	display: block;
-	border: 3px solid #f26522;
+	border: 3px solid #8080ff;
 	color: white;
-	background: #f26522;
+	background: #8080ff;
 }
 #search button.submit:hover {
-	color: #f26522;
+	color: #8080ff;
 	background: transparent;
 }
 
