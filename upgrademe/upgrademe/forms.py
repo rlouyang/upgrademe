@@ -1,6 +1,6 @@
 from django import forms
 import localflavor.us.forms as lfforms
-from upgrademe.models import *
+from upgrademeapp.models import *
 from django.core.exceptions import ValidationError
 
 class NewUser(forms.Form):
