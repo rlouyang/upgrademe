@@ -1,0 +1,2 @@
+# UpGradeMe
+UpGradeMe is a web application that allows users to give and receive anonymous, constructive criticism to and from their Facebook friends. It is designed for all users who wish to gain more self-awareness and who are willing to receive feedback from people that would know them best. The mission of UpGradeMe is to assist users in becoming more self-aware of their strengths and weaknesses, to self-improve, and to become the best version of themselves.  

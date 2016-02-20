@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %} Search {% endblock %}
+
+{% block navigation %}
+	<li><a href="/">Home.</a></li>
+	<li class="current"><a href="/offer/">Offer Food.</a></li>
+	<li><a href="/browse/">Browse Food.</a></li>
+	<li><a href="/logout/">Log out.</a></li>
+{% endblock %}
+
+{% block page_title %}Offer Food{% endblock %}
+
+{% block content %}
+
+{% block form %}
+  <form name="Offer" id="Offer" method="post" action="/offer/" enctype="multipart/form-data">
+    <fieldset>
+        {% csrf_token %}
+        <div class="row">
+        {% for field in form %}
+            <div class="six columns mob-whole">
+                <div class="field {% if field.errors %} field_error {% endif %}">
+                    {{ field }} 
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:"2" %}</div><div class="row">{% endif %}
+        {% endfor %}
+        </div>
+
+        <div>
+            <button class="submit full-width">Offer!</button>
+        </div>
+    </fieldset>
+  </form><!-- Register Form -->
+{% endblock %}
+
+
+{% endblock %}
