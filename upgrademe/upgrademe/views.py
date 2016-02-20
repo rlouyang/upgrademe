@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, Http404, HttpResponse
-from foodoffers.models import *
+from upgrademeapp.models import *
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
@@ -16,7 +16,7 @@ def populate_home_page(request):
         return render(request, 'index.html', {'authenticated': True})
     else:
         return render(request, 'index.html', {'authenticated': False})
-        
+
 @login_required
 def populate_browse(request):
     return render(request, 'browse.html', {'offer_list': FoodOffer.objects.all()})
@@ -28,7 +28,7 @@ def populate_long_offer(request, offer_id):
         offer = FoodOffer.objects.get(pk=offer_id)
     except:
         raise Http404("Offer " + str(offer_id) + " does not exist.")
-        
+
     return render(request, 'long_offer.html', {'offer': offer})
 
 def get_new_user(request):
@@ -59,15 +59,15 @@ def see_profile(request):
     offers = FoodOffer.objects.prefetch_related('foodrequest_set').filter(user=request.user)
     requests = FoodRequest.objects.filter(requester=request.user)
     return render(request, 'myaccount.html', {'offer_list': offers, 'request_list': requests})
-            
+
 def return_static_file(request, fname):
     try:
         f = open(os.path.join(os.getcwd(), fname))
         return HttpResponse(f.read())
     except:
          raise Http404("File " + os.path.join(os.getcwd(), fname) + " does not exist.")
-                    
-    
+
+
 def populate_user_created(request):
     return render(request, 'user_created.html', {})
 
@@ -107,7 +107,7 @@ def request_food(request, offer_id):
         offer = FoodOffer.objects.get(pk=offer_id)
     except:
         raise Http404("Offer " + str(offer_id) + " does not exist.")
-    
+
     food_request = FoodRequest(offer = offer,
                                 requester = User.objects.get(pk=request.user.id),
                                 party_size = 1,
@@ -118,7 +118,7 @@ def request_food(request, offer_id):
         food_request.save()
         offer.available_people = F('available_people') - 1
         offer.save()
-    
+
     return render(request, "successful_request.html", {"offer": offer})
 
 @login_required
@@ -128,11 +128,11 @@ def accept_request(request, request_id):
         request_to_accept = FoodRequest.objects.get(pk=request_id)
     except:
         return Http404("Food request " + str(request_id) + " does not exist.")
-    
+
     if request_to_accept.offer.user.id == request.user.id:
         request_to_accept.accepted = True
         request_to_accept.save()
-    
+
     return HttpResponseRedirect('/accounts/profile/')
 
 @login_required
@@ -164,12 +164,12 @@ def get_new_offer(request):
 @login_required
 def thank_offer(request, offer_id):
     offer_id = int(offer_id)
-    
+
     try:
         offer = FoodOffer.objects.get(pk=offer_id)
     except:
         return Http404('FoodOffer ' + str(offer_id) + ' does not exist.')
-    
+
     if offer.user.id == request.user.id:
         return render(request, "thank_offer.html", {"offer": offer})
     else:
