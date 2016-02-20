@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %} Search {% endblock %}
+
+{% block navigation %}
+	<li><a href="/">Home.</a></li>
+	<li><a href="/offer/">Offer Food.</a></li>
+	<li><a href="/browse/">Browse Food.</a></li>
+	<li class="current"><a href="/accounts/profile/">My Account</a></li>
+	<li><a href="/logout/">Log out.</a></li>
+{% endblock %}
+
+{% block page_title %}
+	My Account
+{% endblock %}
+
+{% block content %}
+<section id="content">
+
+<h1> Hi, {{ request.user.first_name}}.
+
+<h2> Recent Offers </h2>
+	<div class="row">
+		<div class="tab-whole twelve columns">
+			{% for offer in offer_list %}
+					<div class="alert-box notice hideit">
+						<p>{% include "short_offer_personal.html" %}</p>
+					</div><!-- /notice -->
+			{% empty %}
+			It doesn't look like you've offered any meals lately. We'd be thrilled if you <a href="/offer">shared</a> a place at your table!
+			{% endfor %}
+		</div>
+	</div>
+
+<h2> Recent Requests </h2>
+	<div class="row">
+		<div class="tab-whole twelve columns">
+			{% for request in request_list %}
+					<div class="alert-box notice hideit">
+						<p>{% include "short_request_personal.html" %}</p>
+					</div><!-- /notice -->
+			{% empty %}
+			It doesn't look like you've requested any meals yet. <a href="/browse/">Browse</a> some available ones now!
+			{% endfor %}
+
+		</div>
+	</div>
+
+</section>
+{% endblock %}
