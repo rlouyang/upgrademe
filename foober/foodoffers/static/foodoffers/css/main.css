@@ -1282,7 +1282,7 @@ hr {
 /* k. Hero Section
 /* =================================================================== */
 #hero {
-	background: #12151b url(../images/hero.jpg) no-repeat center center fixed;
+	background: #70dbdb;
 	/*slides for hero*/
 	-webkit-background-size: cover !important;
 	-moz-background-size: cover !important;
